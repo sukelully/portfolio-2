@@ -1,10 +1,23 @@
 import "./styles.css";
-import { greeting } from './greeting.js';
 
-const updateGreeting = (function () {
-    const greetingHeader = document.getElementById('greeting-header');
-    greetingHeader.innerHTML = `${greeting}`;
-})();
+// Set up event listeners for mobile menu
+const initApp = () => {
+    const hamburgerBtn = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    // Show/hide mobile menu
+    const toggleMenu = () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        hamburgerBtn.classList.toggle('toggle-btn');
+    }
 
-console.log(greeting);
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    mobileMenu.addEventListener('click', toggleMenu);
+}
+
+// Update footer year
+const year = document.getElementById('year');
+year.textContent = new Date().getFullYear();
+
+document.addEventListener('DOMContentLoaded', initApp);

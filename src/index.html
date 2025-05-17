@@ -1,12 +1,311 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="sm:scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sukelully.dev</title>
+    <meta name="description"
+        content="Hi! I'm Luke, a front-end developer with a background in engineering. Check out some of my work and reach out if any of it interests you." />
+    <meta name="keywords" content="front-end developer, portfolio, JavaScript, React, Tailwind CSS, projects" />
+    <link rel="canonical" href="https://sukelully.dev/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Luke Sullivan Developer Portfolio" />
+    <meta property="og:description"
+        content="Hi! I'm Luke, a front-end developer with a background in engineering. Check out some of my work and reach out if any of it interests you." />
+    <meta property="og:image" content="https://sukelully.dev/og-image.webp" />
+    <meta property="og:url" content="https://sukelully.dev/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts, Font Awesome, Umami analytics & favicon import scripts -->
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="435554ec-8802-496c-92c2-a4e05ced4f19"></script>
+    <script src="https://kit.fontawesome.com/9ab3110fa7.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
 </head>
-<body class="bg-orange-200">
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    <h2 id="greeting-header"></h2>
+
+<body class="min-h-screen bg-slate-100 dark:bg-neutral-950 dark:text-white">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-10 bg-teal-900 text-white">
+        <section class="mx-auto flex max-w-4xl items-center justify-between p-4">
+            <h1 class="text-3xl font-medium">sukelully.dev</h1>
+            <div>
+                <button id="hamburger-button" aria-label="Open mobile menu" aria-expanded="false"
+                    class="relative h-8 w-8 cursor-pointer text-3xl md:hidden">
+                    <div
+                        class="absolute top-4 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
+                    </div>
+                </button>
+                <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
+                    <a href="#hello" class="hover:opacity-90">Hello!</a>
+                    <a href="#projects" class="hover:opacity-90">Projects</a>
+                    <a href="#about-me" class="hover:opacity-90">About</a>
+                    <a href="#contact" class="hover:opacity-90">Contact</a>
+                </nav>
+            </div>
+        </section>
+
+        <section id="mobile-menu"
+            class="absolute top-68 bg-slate-100 dark:bg-neutral-950 w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden">
+            <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
+                <a href="#hello" class="text-black dark:text-white w-full text-center py-6 hover:opacity-90">Hello!</a>
+                <a href="#projects"
+                    class="text-black dark:text-white w-full text-center py-6 hover:opacity-90">Projects</a>
+                <a href="#about-me"
+                    class="text-black dark:text-white w-full text-center py-6 hover:opacity-90">About</a>
+                <a href="#contact"
+                    class="text-black dark:text-white w-full text-center py-6 hover:opacity-90">Contact</a>
+            </nav>
+        </section>
+    </header>
+
+    <main class="max-w-4xl mx-auto">
+        <!-- HELLO -->
+        <section id="hello"
+            class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 scroll-mt-40 widescreen:section-min-height tallscreen:section-min-height">
+            <article class="sm:w-1/2">
+                <h2
+                    class="max-w-md text-4xl font-bold text-center sm:text-5xl sm:text-left text-slate-900 dark:text-white">
+                    Front-End Developer with an
+                    <span class="text-indigo-700 dark:text-indigo-300">Engineering Mindset</span>
+                </h2>
+                <p class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-slate-400">
+                    Hi! I'm a front-end developer with a background in electronic
+                    engineering and audio technology.
+                </p>
+            </article>
+            <div id="image-container" class="flex flex-row gap-4 items-end">
+                <img class="w-1/2" src="./img/hello-pic.webp"
+                    alt="A selfie of myself in an aircraft wearing a headset!" />
+                <div id="typing-animation-div" class="w-1/3 bg-teal-900 h-3"></div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <div id="tech-stack" class="my-12 w-3/4 mx-auto">
+            <h3 class="text-3xl text-center">Tech Stack</h3>
+            <ul class="list-none mx-auto my-6 flex justify-center flex-wrap flex-row items-center gap-4">
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    JavaScript
+                </li>
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    HTML/CSS
+                </li>
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    Tailwind CSS
+                </li>
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    Python
+                </li>
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    React
+                </li>
+                <li class="text-center border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2">
+                    MySQL
+                </li>
+            </ul>
+            <p class="text-lg">
+                I primarily work with JavaScript, HTML and CSS, building clean,
+                functional web interfaces from the ground up. I've recently added
+                <span class="font-bold">React</span> and
+                <span class="font-bold">Tailwind CSS</span> to my toolset to
+                streamline development and enhance UI/UX, and I'm always keen to
+                explore new technologies and level up my skills.
+            </p>
+        </div>
+        <hr class="mx-auto bg-black dark:bg-white w-1/2" />
+
+        <!-- PROJECTS -->
+        <section id="projects" class="p-6 my-12 flex flex-col gap-20 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center sm:text-5xl text-slate-900 dark:text-white">
+                Projects
+            </h2>
+
+            <div id="unwind-chimes" class="dark:bg-slate-800 bg-slate-300 rounded-3xl p-8 shadow-xl">
+                <h3 class="text-3xl sm:text-4xl pb-6 font-bold text-center sm:text-left">
+                    Unwind Chimes (WIP)
+                </h3>
+                <div class="flex flex-col sm:flex-row gap-8 items-center">
+                    <img src="./img/unwind-chimes.webp" class="sm:w-1/2 w-3/4"
+                        alt="Visual mockup for Unwind Chimes app featuring floating gradient balls and a central black orb on a minimal white canvas." />
+                    <p class="text-lg">
+                        Unwind Chimes is an interactive web app that creates random,
+                        evovling chord progressions and relaxing soundscapes using
+                        physics-based simulations powered by Matter.js.
+                        <br />
+                        <br />
+                        It employs the Karplus-Strong plucked string algorithm to generate
+                        audio in the browser via the Web Audio API.
+                    </p>
+                </div>
+                <div id="links-container" class="flex flex-row flex-wrap justify-center pt-6 gap-8">
+                    <a class="bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:bg-indigo-800 transition duration-300 flex flex-row items-center text-nowrap"
+                        href="https://sukelully.github.io/unwind-chimes/" target="_blank" rel="noopener noreferrer"
+                        aria-labelledby="visitSite-unwindchimes">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        <span id="visitSite-unwindchimes" class="pl-2">Visit Site</span>
+                    </a>
+                    <a class="bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:bg-indigo-800 transition duration-300 flex flex-row items-center text-nowrap"
+                        href="https://github.com/sukelully/unwind-chimes" target="_blank" rel="noopener noreferrer"
+                        aria-labelledby="githubLabel-unwindchimes">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span id="githubLabel-unwindchimes" class="pl-2">Source Code</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="stringtendo" class="dark:bg-slate-800 bg-slate-300 rounded-3xl p-8 shadow-xl">
+                <h3 class="text-3xl sm:text-4xl pb-6 font-bold text-center sm:text-left">
+                    Stringtendo
+                </h3>
+                <div class="flex flex-col sm:flex-row-reverse gap-8 items-center">
+                    <img src="./img/stringtendo.webp" class="sm:w-1/2 rounded-lg"
+                        alt="A breadboard wired up to an Arduino microcontroller and attached to two Nintendo nunchuck controllers through an adapter." />
+                    <p class="text-lg">
+                        Stringtendo is a digital instrument I created for my final year
+                        BEng project at university. Joystick and accelerometer data from
+                        two Nintendo nunchucks is sent to the browser using an Arduino
+                        microcontroller via the Web Serial API where it is sonified using
+                        the Tone.js library.
+                    </p>
+                </div>
+                <div id="links-container" class="flex flex-row flex-wrap justify-center pt-6 gap-8">
+                    <a class="bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:bg-indigo-800 transition duration-300 flex flex-row items-center text-nowrap"
+                        href="https://github.com/sukelully/stringtendo.js" target="_blank" rel="noopener noreferrer"
+                        aria-labelledby="githubLabel-stringtendo">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span id="githubLabel-stringtendo" class="pl-2">Source Code</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="clumsy" class="dark:bg-slate-800 bg-slate-300 rounded-3xl p-8 shadow-xl">
+                <h3 class="text-3xl sm:text-4xl pb-6 font-bold text-center sm:text-left">
+                    Clum.sy
+                </h3>
+                <div class="flex flex-col sm:flex-row gap-8 items-center">
+                    <img src="./img/clum-sy.webp" class="sm:w-1/2 rounded-lg"
+                        alt="Visual mockup for Clum.sy featuring a floating gradient bass ball on one side of an iPad screen and a four balls bouncing on key pads on the right side of the screen." />
+                    <p class="text-lg">
+                        Clum.sy is another interactive music app built for iPads in Swift
+                        as part of my iOS Audio Programming module at university. The app
+                        is essentially a precursor to Unwind Chimes and functions very
+                        similarly, though it uses MIDI samples instead of synthesised
+                        audio.
+                    </p>
+                </div>
+                <div id="links-container" class="flex flex-row flex-wrap justify-center pt-6 gap-8">
+                    <a class="bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:bg-indigo-800 transition duration-300 flex flex-row items-center text-nowrap"
+                        href="https://github.com/sukelully/clum.sy" target="_blank" rel="noopener noreferrer"
+                        aria-labelledby="githubLabel-clumsy">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span id="githubLabel-clumsy" class="pl-2">Source Code</span>
+                    </a>
+                    <a class="bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:bg-indigo-800 transition duration-300 flex flex-row items-center text-nowrap"
+                        href="https://drive.google.com/file/d/1wDCNJvMht1Zpie2V9k9B8QsB3DjtoBeI/view" target="_blank"
+                        rel="noopener noreferrer" aria-labelledby="demoVideo-clumsy">
+                        <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+                        <span id="demoVideo-clumsy" class="pl-2">Demo Video</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <hr class="mx-auto bg-black dark:bg-white w-1/2" />
+
+        <!-- ABOUT ME -->
+        <section id="about-me"
+            class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+            <h2 class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+                About Me
+            </h2>
+            <div class="flex flex-col justify-center md:flex-row items-center gap-12 md:mt-28">
+                <img src="./img/about-pic.webp" alt="A picture of me smiling at the camera whilst working at my desk."
+                    class="sm:w-2/5 w-3/4 rounded-tl-[30%] rounded-tr-xl rounded-br-[30%] rounded-bl-xl border-[0.5rem] border-teal-900" />
+                <p class="text-lg">
+                    I've always been drawn to the creative side of the build
+                    process—whether it was piecing together Lego spaceships as a kid or
+                    getting lost perfecting an 8-bar loop in Ableton Live. After being
+                    exposed to programming whilst studying Electronic Engineering at
+                    university, I was hooked. I gained experience with several languages
+                    during my studies, including Python, C, Java and Swift, before
+                    finally landing in front-end development where I truly found my
+                    niche.
+                    <br />
+                    <br />
+                    I love creating interactive web apps and compelling user interfaces.
+                    Feel free to reach out using my contact details below.
+                </p>
+            </div>
+        </section>
+        <hr class="mx-auto bg-black dark:bg-white w-1/2" />
+
+        <!-- CONTACT -->
+        <section id="contact"
+            class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height">
+            <h2 class="text-4xl font-bold text-center sm:text-5xl text-slate-900 dark:text-white">
+                Get In Touch
+            </h2>
+            <div class="flex flex-row flex-wrap items-center justify-center gap-8 my-6">
+                <a href="https://github.com/sukelully" class="flex items-center text-lg" target="_blank"
+                    rel="noopener noreferrer" aria-labelledby="githubLabel">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <span id="githubLabel" class="pl-2">GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/sukelully/" class="flex items-center text-lg" target="_blank"
+                    rel="noopener noreferrer" aria-labelledby="linkedinLabel">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    <span id="linkedinLabel" class="pl-2">LinkedIn</span>
+                </a>
+            </div>
+            <form action="https://formsubmit.co/luke@sukelully.dev" method="POST"
+                class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-left gap-4">
+                <label for="subject">Name:</label>
+                <input type="text" id="name" name="name" required minlength="3" maxlength="60" placeholder="Your name"
+                    aria-label="Enter the subject of your message"
+                    class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none shadow-md" />
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" cols="30" rows="10" aria-label="Enter the content of your message"
+                    placeholder="Your message" required
+                    class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl h-60 shadow-md"></textarea>
+                <button type="submit"
+                    class="bg-teal-900 font-bold hover:bg-teal-800 active:bg-teal-500 text-white p-3 w-48 rounded-xl shadow-lg dark:border-none mx-auto"
+                    aria-label="Submit your message">
+                    Submit
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-teal-900 text-white text-xl" role="contentinfo">
+        <section class="max-w-4xl mx-auto p-4 flex flex-col justify-center items-center gap-2">
+            <div class="flex flex-row gap-4">
+                <a href="https://github.com/sukelully" class="flex items-center text-lg" target="_blank"
+                    rel="noopener noreferrer" aria-label="Go to my GitHub profile">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/sukelully/" class="flex items-center text-lg" target="_blank"
+                    rel="noopener noreferrer" aria-label="Go to my LinkedIn profile">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:luke@sukelully.dev" class="flex items-center"
+                    aria-label="Send an email to luke@sukelully.dev">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </a>
+            </div>
+            <p class="text-sm">Copyright &copy; <span id="year"></span></p>
+            <p class="text-sm">All Rights Reserved</p>
+        </section>
+    </footer>
 </body>
+
 </html>

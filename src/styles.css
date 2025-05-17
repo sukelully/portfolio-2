@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --highlight-color: #134e4a;
+}
+
+@layer utilities {
+  .section-min-height {
+    min-height: calc(100vh - 68px);
+  }
+  .toggle-btn {
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent;
+  }
+
+  #typing-animation-div {
+    animation: typing-animation 1.5s step-start infinite;
+  }
+  
+  p, button, h1, h2, h3, a, label, input, textarea {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+
+
+@keyframes typing-animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
